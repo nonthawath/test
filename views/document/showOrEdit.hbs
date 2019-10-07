@@ -1,0 +1,37 @@
+<h3>{{viewTitle}}</h3>
+<h4>ข้อมูลรายรับ</h4>
+
+
+<form autocomplete="off">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ชื่อ-นามสกุล</th>
+            <th>ว/ด/ป</th>
+            <th>เวลา</th>
+            <th>รูปแบบสมาชิก</th>
+            <th>จำนวนเงิน</th>
+            <th>หมายเลขใบเสร็จรับเงิน</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.count}}</td>
+            <td>{{this.fullName}}</td>
+            <td>{{this.date}}</td>
+            <td>{{this.time}}</td>
+            <td>{{this.typeCustomer}}</td>
+            <td>{{this.total}}</td>
+            <td>{{this.slipNumber}}</td>
+            <td>
+                <a href="/document/delete/{{this._id}}" onclick="return confirm('ระบบจะทำการบันทึกประวัติการลบครั้งนี้ท่านยังยืนยันหรือไม่ ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</form>
